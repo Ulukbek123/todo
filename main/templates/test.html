@@ -12,6 +12,9 @@
     <section>
         <div class="box"><h2>This is test page. Please be sure</h2></div>
     </section>
-    
+    {% for todo in todo_list %}
+        <h3>{{ todo.text}}</h3>
+    {% endfor %}
+
 </body>
 </html>
