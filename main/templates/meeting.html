@@ -6,39 +6,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'styles/test.css' %}"> -->
-    <!-- <link rel="shortcut_icon" href="{% static 'icons/delete.png' %}"> -->
+    <link rel="stylesheet" href="{% static './styles/styles.css'%}">
+    <link rel="stylesheet" href="{% static ' .styles/checkbox.css'%} ">
     <title>Document</title>
 </head>
 
 <body>
-    <!-- <section>
-        <div class="box"><h2>This is test page. Please be sure</h2></div>
-    </section>
-    {% for todo in todo_list %}
-        <h3>{{ todo.text}}</h3>
-    {% endfor %} -->
-
     <section>
         <div class="create_container">
             <input type="text" class="create_input" placeholder="Напишите сюда новую задачу">
             <button class="create_button">Добавить</button>
         </div>
-
         <div class="todo_container">
-            {% for todo in todo_list %}
+            {% for tomeet in tomeet_list %}
             <div class="todo_item">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <h4>{{ todo.text}}</h4>
+                    <h4>{{ tomeet.name}}</h4>
                 </div>
                 <div class="todo_item_footer">
-                    <p>{{ todo.created_at}}</p>
+                    <p>{{ tomeet.on_time}}</p>
                     <div class="action_buttons">
                         <img src="./icons/unmarked.png">
                         <img src="./icons/delete.png">
@@ -47,7 +37,6 @@
             </div>
             {% endfor %}
         </div>
-
     </section>
 </body>
 
